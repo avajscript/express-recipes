@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    h1.border-bottom.pb-1.mb-2= title
+        | #{": "} #{recipe.title}
+    div.row
+        a(href=recipe.category.url class ='link-primary px-4 mb-4') #{recipe.category.name}
+        div.col-lg-6
+            h3 Ingredients
+            ul
+                each ingredient in recipe.ingredients
+                    li= ingredient
+
+        div.col-lg-6.mb-4
+            h3 Instructions
+            p #{recipe.instructions}
+            h3 Description
+            p #{recipe.description}
+
+        hr
+

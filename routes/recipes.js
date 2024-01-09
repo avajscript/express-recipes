@@ -2,17 +2,16 @@ const express = require("express");
 const router = express.Router();
 const asyncHandler = require("express-async-handler");
 const Recipe = require("../models/Recipe");
+const recipe_controller = require('../controllers/RecipeController');
 
 router.get(
     "/",
-    asyncHandler(async (req, res, next) => {
-        const allRecipes = await Recipe.find().sort({ title: 1 }).exec();
+     recipe_controller.index
+);
 
-        res.render("recipe_list", {
-            title: "All Recipes",
-            all_recipes: allRecipes,
-        });
-    }),
+router.get(
+    "/:id",
+    recipe_controller.recipe_details
 );
 
 module.exports = router;

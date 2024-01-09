@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Category = require('./Category');
 const Schema = mongoose.Schema;
 
 const recipeSchema = new Schema({
@@ -9,7 +10,7 @@ const recipeSchema = new Schema({
         maxLength: 100,
     },
     category: {
-        type: mongoose.Schema.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: "Category",
         required: true,
     },
@@ -22,7 +23,7 @@ const recipeSchema = new Schema({
         required: true,
     },
     createdBy: {
-        type: mongoose.Schema.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: "User",
         required: false,
     },

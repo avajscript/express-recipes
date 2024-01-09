@@ -1,21 +1,32 @@
 const Recipe = require("../models/Recipe");
 const asyncHandler = require("express-async-handler");
 
-exports.recipe_list = asyncHandler(async (req, res, next) => {
+exports.index = asyncHandler(async (req, res, next) => {
     const recipes = await Recipe.find()
-        .sort({ title: 1 })
         .populate("category")
+        .sort({ title: 1 })
         .exec();
-    console.log("recipes");
-    console.log(recipes);
     res.render("recipe_list", {
         title: "All Recipes",
-        recipes: recipes,
+        all_recipes: recipes,
     });
 });
 
 exports.recipe_details = asyncHandler(async (req, res, next) => {
-    res.send("NOT IMPLEMENTED: Recipe details");
+    const recipe = await Recipe.findById(req.params.id)
+        .populate("category")
+        .sort({ title: 1 })
+        .exec();
+
+    // Recipe cannot be found
+    if (recipe === null) {
+        res.redirect("/recipes");
+    }
+
+    res.render("recipe_detail", {
+        title: "Recipe",
+        recipe: recipe
+    });
 });
 
 exports.recipe_create_get = asyncHandler(async (req, res, next) => {

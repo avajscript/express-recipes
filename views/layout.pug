@@ -6,8 +6,8 @@ html
         link(rel="stylesheet", href="/styles.css")
     body
         .container-lg
-            div.row
-                div.col-2.p-2
+            div.row.p-2
+                div.col-sm-2.col-12.p-2
                     a(href='/' class = 'link-primary') Home
                     br
                     a(href='/recipes' class = 'link-primary') Recipes
@@ -15,4 +15,5 @@ html
                     a(href='/categories' class = 'link-primary') Categories
                     br
                     a(href='/users' class = 'link-primary') Users
-                block content
+                div.col-sm-10.col-12
+                    block content
