@@ -1,9 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-// GET home page
 router.get("/", function (req, res, next) {
-    res.redirect("/recipes");
+    res.render("categories", {
+        title: "All Categories",
+    });
 });
-
-module.exports = router;
