@@ -6,7 +6,8 @@ exports.recipe_list = asyncHandler(async (req, res, next) => {
         .sort({ title: 1 })
         .populate("category")
         .exec();
-
+    console.log("recipes");
+    console.log(recipes);
     res.render("recipe_list", {
         title: "All Recipes",
         recipes: recipes,

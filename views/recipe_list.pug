@@ -5,5 +5,9 @@ block content
         h1.border-bottom= title
         ul
             each recipe in all_recipes
-                li #{recipe.title}, #{recipe.category.name}, #{}
+                li
+                    | #{recipe.title}
+                    a(href=recipe.category.url class = 'link-primary') #{recipe.category}
+                    a(href=recipe.url class = 'link-primary') View Recipe
+
 
