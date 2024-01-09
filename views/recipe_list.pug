@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    .col-10
+        h1.border-bottom= title
+        ul
+            each recipe in all_recipes
+                li #{recipe.title}, #{recipe.category.name}, #{}
+

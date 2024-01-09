@@ -6,3 +6,5 @@ router.get("/", function (req, res, next) {
         title: "All Categories",
     });
 });
+
+module.exports = router;

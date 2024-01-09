@@ -2,7 +2,15 @@ const Recipe = require("../models/Recipe");
 const asyncHandler = require("express-async-handler");
 
 exports.recipe_list = asyncHandler(async (req, res, next) => {
-    res.send("NOT IMPLEMENTED: Recipe list");
+    const recipes = await Recipe.find()
+        .sort({ title: 1 })
+        .populate("category")
+        .exec();
+
+    res.render("recipe_list", {
+        title: "All Recipes",
+        recipes: recipes,
+    });
 });
 
 exports.recipe_details = asyncHandler(async (req, res, next) => {
