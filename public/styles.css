@@ -13,4 +13,25 @@ a:hover {
   width: 33%;
 }
 
+.img {
+  object-fit: cover;
+  height: auto;
+  width: 100%;
+}
+
+.shadow-hover {
+  transition: box-shadow 0.25s ease;
+}
+.shadow-hover:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.bg-focus-grey:active {
+  background-color: #f8f8f8;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=styles.css.map */

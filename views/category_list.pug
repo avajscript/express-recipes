@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h1.border-bottom= title
+    div.row
+        each category in all_categories
+            div.col-lg-3.p-2.d-flex.flex-column.justify-content-between
+                a(href=category.url)
+                    div.p-2.border.shadow-hover.cursor.bg-focus-grey
+                        img(src='/images/'+category.imageUrl alt = category.name class = ' img mb-2' )
+                        div
+                            h3= category.name
+                            p= category.description
+

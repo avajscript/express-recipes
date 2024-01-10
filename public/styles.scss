@@ -13,3 +13,26 @@ a {
     }
 
 }
+
+.img {
+    object-fit: cover;
+    height: auto;
+    width: 100%
+}
+
+.shadow-hover {
+    transition: box-shadow .25s ease;
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+}
+
+.bg-focus-grey {
+    &:active{
+        background-color: #f8f8f8;
+    }
+}
+
+.cursor {
+    cursor: pointer;
+}

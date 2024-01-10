@@ -1,10 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const category_controller = require("../controllers/CategoryController");
 
-router.get("/", function (req, res, next) {
-    res.render("categories", {
-        title: "All Categories",
-    });
-});
+router.get("/", category_controller.category_list);
 
 module.exports = router;
