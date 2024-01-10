@@ -30,7 +30,9 @@ exports.recipe_details = asyncHandler(async (req, res, next) => {
 });
 
 exports.recipe_create_get = asyncHandler(async (req, res, next) => {
-    res.send("NOT IMPLEMENTED: Recipe details");
+    res.render("recipe_create", {
+       title: "Create recipe"
+    });
 });
 
 exports.recipe_create_post = asyncHandler(async (req, res, next) => {

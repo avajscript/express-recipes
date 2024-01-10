@@ -18,8 +18,9 @@ html, body {
   table-layout: fixed;
   width: 100%;
 }
-.base-table td {
+.base-table td, .base-table th {
   width: 33%;
+  text-align: left;
 }
 
 .img {

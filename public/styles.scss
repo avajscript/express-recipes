@@ -17,8 +17,9 @@ html, body{
 .base-table {
     table-layout: fixed;
     width: 100%;
-    td {
+    td, th {
         width: 33%;
+        text-align: left;
     }
 
 }

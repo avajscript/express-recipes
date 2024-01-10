@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const asyncHandler = require("express-async-handler");
-const Recipe = require("../models/Recipe");
 const recipe_controller = require('../controllers/RecipeController');
 
 router.get(
@@ -13,5 +12,7 @@ router.get(
     "/:id",
     recipe_controller.recipe_details
 );
+
+router.get("/create", recipe_controller.recipe_create_get);
 
 module.exports = router;

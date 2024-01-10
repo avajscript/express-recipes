@@ -1,17 +1,22 @@
 extends layout
 
 block content
-    .col-10
+    .col-12.col-sm-10
         h1.border-bottom= title
-        each recipe in all_recipes
-            table(class = 'base-table ')
-                tr.border-bottom
-                    td.p-1
-                        | #{recipe.title}
-                    td.p-1
-                        a(href=recipe.category.url class = 'link-primary px-4') #{recipe.category.name}
-                    td.p-1
-                        a(href=recipe.url class = 'link-primary') View Recipe
+        table(class = 'base-table ')
+            tr
+                th.p-1 Name
+                th.p-1 Category
+                th.p-1 Link
+            each recipe in all_recipes
+
+                    tr.border-bottom
+                        td.p-1
+                            | #{recipe.title}
+                        td.p-1
+                            a(href=recipe.category.url class = 'link-primary ') #{recipe.category.name}
+                        td.p-1
+                            a(href=recipe.url class = 'link-primary') View Recipe
 
 
 
