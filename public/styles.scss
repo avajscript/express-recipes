@@ -5,6 +5,15 @@ a {
     }
 }
 
+html, body{
+    background-color: #f8f8f8;
+}
+
+.content {
+    background-color: #fff;
+    min-height: 100vh;
+}
+
 .base-table {
     table-layout: fixed;
     width: 100%;

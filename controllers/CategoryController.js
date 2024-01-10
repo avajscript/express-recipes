@@ -23,7 +23,11 @@ exports.category_details = asyncHandler(async (req, res, next) => {
         res.redirect("/categories");
     }
 
-    res.render("category_detail")
+    res.render("category_detail", {
+        title: "Category",
+        category: category,
+        category_recipes: categoryRecipes
+    })
 });
 
 exports.category_create_get = asyncHandler(async (req, res, next) => {

@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    h1.pb-2.border-bottom= title
+        | : #{" "} #{category.name}
+    a(href='/categories' title='Categories') Back to categories
+    br
+    br
+    div.row
+        div.col-lg-6
+            img(src='/images/'+category.imageUrl alt = category.name class = 'w-100 mb-2')
+            h3 Description
+            p= category.description
+        div.col-lg-6
+            div.d-flex.align-items-center.mb-2
+                h3.mb-1.pe-2 Recipes
+                p.text-info.mb-1 Count: (#{category_recipes.length})
+            each recipe in category_recipes
+                table(class = 'base-table ')
+                    tr.border-bottom
+                        td.p-1
+                            | #{recipe.title}
+                        td.p-1
+                            a(href=recipe.url class = 'link-primary') View Recipe
