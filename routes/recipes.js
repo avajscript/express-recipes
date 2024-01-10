@@ -8,11 +8,12 @@ router.get(
      recipe_controller.index
 );
 
+router.get("/create", recipe_controller.recipe_create_get);
+
 router.get(
     "/:id",
     recipe_controller.recipe_details
 );
 
-router.get("/create", recipe_controller.recipe_create_get);
 
 module.exports = router;
