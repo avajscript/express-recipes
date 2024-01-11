@@ -3,6 +3,7 @@ extends layout
 block content
     .col-12.col-sm-10
         h1.border-bottom= title
+        p.text-info Recipe Count: (#{all_recipes.length})
         table(class = 'base-table ')
             tr
                 th.p-1 Name

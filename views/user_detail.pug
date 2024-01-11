@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h1.border-bottom.pb-2.mb-3= title
+    a(title='Users' href='/users') Back to users
+    br
+    br
+    div.border.p-3
+        p= user.username
+        a(href="mailto:"+user.email)
+            span.text-info= user.email

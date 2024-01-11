@@ -1,0 +1,35 @@
+extends layout
+
+block content
+    h1.border-bottom.pb-2.mb-3= title
+    form(method='POST')
+        div.mb-3
+            label(for='title' class = 'form-label') Title
+            input(class='form-control' id='title' name='title' value=(recipe === undefined ? "" : recipe.title))
+
+        div.mb-3
+            label(for='category' class='form-label') Category
+            br
+            select(name='category' id='category').form-select
+                each category in categories
+                    option(value=category._id) #{category.name}
+
+        div.mb-3
+            label(for='ingredients' class='form-label') Ingredients (comma seperated) -> eggs, cheese...
+            input(class='form-control' id='ingredients' name='ingredients' value=(recipe === undefined ? "" : recipe.ingredients.join(', ')))
+
+
+        div.mb-3
+            label(for='description' class='form-label') Description
+            textarea(class='form-control' id='description' name = 'description')= recipe === undefined ? "" : recipe.description
+
+        div.mb-3
+            label(for='instructions' class = 'form-label') Instructions
+            textarea(class='form-control' id='instructions' name='instructions')= recipe === undefined ? "" : recipe.instructions
+
+        button(type='submit').btn.btn-primary.mb-3 Submit
+
+        if errors
+            ul
+                for error in errors
+                    li.text-danger!= error.msg

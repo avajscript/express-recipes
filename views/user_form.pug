@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    h1.border-bottom.pb-2.mb-3= title
+
+    form(method='POST')
+        div.mb-3
+            label(for='username' class = 'form-label') Username
+            input(class='form-control' id = 'username' name = 'username')
+
+        div.mb-3
+            label(for='email' class = 'form-label') Email
+            input(class='form-control' id='email' type='email' name = 'email')
+
+        div.mb-3
+            label(for='password' class = 'form-label') Password
+            input(class='form-control' id = 'password' name = 'password')
+
+        div.mb-3
+            label(for='passwordConfirm' class = 'form-label') Password Confirm
+            input(class='form-control' id = 'passwordConfirm' name = 'passwordConfirm')
+        button(type='submit').btn.btn-primary.mb-3 Submit
+
+    if errors
+        ul
+            for error in errors
+                li.text-danger!= error.msg
