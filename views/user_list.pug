@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    h1.border-bottom.pb-2= title
+    p.text-info.mb-2 Total users: #{all_users.length}
+
+    each user in all_users
+        a(href=user.url title = user.username+" homepage").cursor.link-primary #{user.username},#{" "}
+

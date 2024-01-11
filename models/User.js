@@ -35,4 +35,8 @@ userSchema.pre("save", async function (next) {
     next();
 });
 
+userSchema.virtual("url").get(function () {
+    return `/users/${this.username}`;
+});
+
 module.exports = mongoose.model("User", userSchema);

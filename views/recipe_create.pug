@@ -2,3 +2,12 @@ extends layout
 
 block content
     h1= title
+    form(method='POST' action='recipes/create')
+        div.form-group
+            label(for='title' class = 'form-label') Title
+            input(class='form-control' id='title' name='title')
+        div.form-group
+            label(for='category' class='form-label') Category
+            select(name='category' id='category').form-label
+                each category in all_categories
+                    option(value=category._id) #{category.name}
