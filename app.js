@@ -2,6 +2,8 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
+// used to enable environment variables in .env
+require("dotenv").config();
 const port = process.env.PORT || 3000;
 const app = express();
 
@@ -11,7 +13,7 @@ const categoriesRouter = require("./routes/categories");
 const usersRouter = require("./routes/users");
 const recipesRouter = require("./routes/recipes");
 // connect to database
-mongoose.connect("mongodb://localhost/recipes");
+mongoose.connect(process.env.MONGO_CONN);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
