@@ -1,6 +1,7 @@
 console.log(
     "This script is used to populate the database. Run it as node populatedb 'your MongoDB url' ",
 );
+require("dotenv").config();
 
 const userArgs = process.argv.slice(2);
 
